@@ -32,13 +32,14 @@ public class amazon {
 		for(int i=0; i<AllProducts.size();i++) {
 			System.out.println(AllProducts.get(i).getText()+" ₹"+AllPrice.get(i).getText());	
 		}
-		String ParentWin= driver.getWindowHandle();
+
 		String ExpectedValue = AllProducts.get(0).getText();
 		
 		//Clicking 1st product link
 		AllProducts.get(0).click();
 		
 		//Switching window
+		String ParentWin= driver.getWindowHandle();
 		Set<String> AllWindowHandler =	driver.getWindowHandles();
 		for(String win : AllWindowHandler ) {
 			if(!win.equals(ParentWin)) {
